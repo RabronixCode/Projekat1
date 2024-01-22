@@ -1,0 +1,12 @@
+<div class="outer-container">
+    <div class="inner-container">
+        <div class="container">
+            <span class="row" *ngFor="let item of items">Naziv: {{item.name}} - Cena: {{item.price}} din.
+                <form>
+                    Nova cena: <input type="text" name="newPrice" placeholder="New price" #newPrice>
+                    <button (click)="changePrice(item, newPrice)">Promeni</button>
+                </form>
+            </span>
+        </div>
+    </div>
+</div>

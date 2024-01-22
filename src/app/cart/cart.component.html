@@ -1,0 +1,25 @@
+<div class="outer-container">
+    <div class="inner-container">
+        <div class="container">
+            <div class="row">
+                <span *ngFor="let c of cartList">
+                    <p class="item">Naziv: {{c.name}}</p><p class="item">Cena: {{c.price}}</p><p class="item">Kolicina: {{c.quantity}}</p><p class="item">Ukupna cena: {{c.wholePrice}}</p>
+                    <button (click)="add(c)">+</button>
+                    <button (click)="subtract(c)">-</button>
+                    <button (click)="delete(c)">X</button>
+                    <br>
+                </span>
+            </div>
+            <div class="row">
+                <span>Ukupna cena svih proizvoda: {{totalPrice}}</span>
+            </div>
+
+            <app-off [newTotal]="newTotal" (code)="fromOff($event)"></app-off>
+            <div class="row">
+                <form>
+                    <button type="submit" (click)="refresh()">AAAA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

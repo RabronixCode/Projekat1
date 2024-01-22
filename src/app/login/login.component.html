@@ -1,0 +1,16 @@
+<div class="page-container">
+    <form class="form-container" [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <label for="username">Username: </label>
+        <input id="username" type="text" formControlName="username" placeholder="Username">
+        <span *ngIf="username?.touched && username && username.invalid" class="error">Morate uneti neku vrednost!</span><br>
+
+        <label for="password">Password: </label>
+        <input id="password" type="text" formControlName="password" placeholder="Password">
+        <span *ngIf="password?.touched && password && password.invalid" class="error">Morate uneti neku vrednost!</span><br>
+        <span *ngIf="wrong" class="error">POGRESAN USERNAME ILI PASSWORD</span>
+
+        <button type="submit" [disabled]="!loginForm.valid">LOG IN</button>
+
+    </form>
+</div>
